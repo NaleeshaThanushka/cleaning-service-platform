@@ -134,13 +134,6 @@ export default function Login() {
               Register here
             </Link>
           </p>
-
-          {/* Admin hint */}
-          <div className="mt-4 bg-blue-500/10 border border-blue-500/20 rounded-2xl p-3 text-center">
-            <p className="text-blue-400 text-xs font-medium">
-              🔐 Admin: admin@cleanpro.lk / admin123
-            </p>
-          </div>
         </div>
       </motion.div>
     </div>
