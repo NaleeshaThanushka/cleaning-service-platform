@@ -20,7 +20,7 @@ export default function Login() {
     return newErrors;
   };
 
-  const handleSubmit = async (e) => {
+const handleSubmit = async (e) => {
     e.preventDefault();
     const newErrors = validate();
     if (Object.keys(newErrors).length > 0) { setErrors(newErrors); return; }
@@ -31,7 +31,7 @@ export default function Login() {
       if (res.data.role === 'admin') navigate('/admin');
       else navigate('/');
     } catch (err) {
-      setErrors({ general: err.response?.data?.message || 'Login failed' });
+      setErrors({ general: err.response?.data?.message || 'Invalid email or password' });
     } finally {
       setLoading(false);
     }
@@ -40,7 +40,6 @@ export default function Login() {
   return (
     <div className="min-h-screen bg-gradient-to-br from-blue-950 via-gray-900 to-blue-950 flex items-center justify-center px-4">
 
-      {/* Background Orbs */}
       <div className="absolute top-20 right-20 w-72 h-72 bg-blue-500/10 rounded-full blur-3xl" />
       <div className="absolute bottom-20 left-20 w-56 h-56 bg-blue-400/10 rounded-full blur-2xl" />
 
@@ -49,7 +48,7 @@ export default function Login() {
         animate={{ opacity: 1, y: 0 }}
         className="w-full max-w-md relative z-10"
       >
-        {/* Logo */}
+      
         <div className="text-center mb-8">
           <div className="w-16 h-16 bg-blue-500 rounded-2xl flex items-center justify-center mx-auto mb-4 shadow-2xl shadow-blue-500/40">
             <Sparkles size={32} className="text-white" />
@@ -58,7 +57,7 @@ export default function Login() {
           <p className="text-gray-400 mt-2">Sign in to your CleanPro account</p>
         </div>
 
-        {/* Card */}
+        
         <div className="bg-white/5 backdrop-blur-md border border-white/10 rounded-3xl p-8 shadow-2xl">
 
           {errors.general && (
@@ -72,7 +71,7 @@ export default function Login() {
           )}
 
           <form onSubmit={handleSubmit} className="space-y-5">
-            {/* Email */}
+        
             <div>
               <label className="block text-sm font-bold text-gray-300 mb-2">Email Address</label>
               <div className="relative">
@@ -88,7 +87,7 @@ export default function Login() {
               {errors.email && <p className="text-red-400 text-xs mt-1">⚠ {errors.email}</p>}
             </div>
 
-            {/* Password */}
+  
             <div>
               <label className="block text-sm font-bold text-gray-300 mb-2">Password</label>
               <div className="relative">
@@ -111,7 +110,7 @@ export default function Login() {
               {errors.password && <p className="text-red-400 text-xs mt-1">⚠ {errors.password}</p>}
             </div>
 
-            {/* Submit */}
+           
             <button
               type="submit"
               disabled={loading}
