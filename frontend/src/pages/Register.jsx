@@ -35,7 +35,6 @@ function PasswordStrength({ password }) {
       animate={{ opacity: 1, y: 0 }}
       className="mt-3 space-y-3"
     >
-      {/* Strength Bar */}
       <div>
         <div className="flex justify-between items-center mb-1.5">
           <span className="text-xs text-gray-400 font-medium">Password Strength</span>
@@ -55,7 +54,6 @@ function PasswordStrength({ password }) {
         </div>
       </div>
 
-      {/* Checks */}
       <div className="grid grid-cols-1 gap-1.5">
         {checks.map((check, i) => (
           <motion.div
@@ -168,7 +166,6 @@ export default function Register() {
 
           <form onSubmit={handleSubmit} className="space-y-4">
 
-            {/* Name */}
             <div>
               <label className="block text-sm font-bold text-gray-300 mb-2">Full Name</label>
               <div className="relative">
@@ -184,7 +181,6 @@ export default function Register() {
               {errors.name && <p className="text-red-400 text-xs mt-1">⚠ {errors.name}</p>}
             </div>
 
-            {/* Email */}
             <div>
               <label className="block text-sm font-bold text-gray-300 mb-2">Email Address</label>
               <div className="relative">
@@ -200,7 +196,6 @@ export default function Register() {
               {errors.email && <p className="text-red-400 text-xs mt-1">⚠ {errors.email}</p>}
             </div>
 
-            {/* Password */}
             <div>
               <label className="block text-sm font-bold text-gray-300 mb-2">Password</label>
               <div className="relative">
@@ -222,11 +217,9 @@ export default function Register() {
               </div>
               {errors.password && <p className="text-red-400 text-xs mt-1">⚠ {errors.password}</p>}
 
-              {/* Password Strength Indicator */}
               <PasswordStrength password={form.password} />
             </div>
 
-            {/* Confirm Password */}
             <div>
               <label className="block text-sm font-bold text-gray-300 mb-2">Confirm Password</label>
               <div className="relative">
